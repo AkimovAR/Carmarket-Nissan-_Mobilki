@@ -8,3 +8,9 @@
 
 
 ![image](https://user-images.githubusercontent.com/93865351/195086462-dc61810a-49cb-4d34-9511-80aff501ef10.png)
+
+
+Экран "Избранное" с одним автомобилем + экран "Данные" этого автомобиля:
+
+
+![image](https://user-images.githubusercontent.com/93865351/195087045-205e175d-c11d-4991-8123-3ed04e957250.png)
