@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MainPage">
+
+    <ScrollView HeightRequest="300">
+        <StackLayout Padding="24" BackgroundColor="#f1f1f1">
+            <Label Text="Nissan Motors" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Start" Padding="10" TextColor="Black"/>
+            <Frame BackgroundColor="#cacaca" Padding="24" CornerRadius="10">
+                <Label HorizontalTextAlignment="Start" TextColor="Black" Margin="-10">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Nissan, " FontSize="24"/>
+                            <Span Text="Все модели / Все поколения" FontSize="14"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Frame>
+            <Grid Padding="0, 3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="115"/>
+                    <ColumnDefinition Width="115"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="36"/>
+                </Grid.RowDefinitions>
+                <Rectangle Fill="White" HeightRequest="30" WidthRequest="115" Grid.Column="0" Grid.Row="0" RadiusX="10" RadiusY="10"/>
+                <Rectangle Fill="White" HeightRequest="30" WidthRequest="115" Grid.Column="1" Grid.Row="0" RadiusX="10" RadiusY="10"/>
+                <Entry x:Name="Price" Placeholder="Цена, Р" FontSize="14" HorizontalTextAlignment="End" Margin="0, -1" Grid.Column="0" Grid.Row="0"/>
+                <Entry x:Name="KPP" Placeholder="КПП" FontSize="14" HorizontalTextAlignment="End" Margin="0, -1" Grid.Column="1" Grid.Row="0"/>
+                <Image Source="Filtr.png" Grid.Column="0" Grid.Row="0" HorizontalOptions="Start" HeightRequest="20" WidthRequest="25" Margin="5, 8"/>
+                <Image Source="Filtr.png" Grid.Column="1" Grid.Row="0" HorizontalOptions="Start" HeightRequest="20" WidthRequest="25" Margin="5, 8"/>
+            </Grid>
+            <CollectionView ItemsSource="{Binding CarCards}">
+                <CollectionView.ItemTemplate>
+                    <!--Шаблон элементов-->
+                    <DataTemplate>
+                        <Grid RowDefinitions="Auto, *" ColumnDefinitions="345, *">
+                            <Frame BackgroundColor="White" CornerRadius="20" Padding="24">
+                                <Label HorizontalTextAlignment="Start" TextColor="Black" Margin="-10" FontSize="14" Text="{Binding Name}"/>
+                            </Frame>
+                            <Image Source="{Binding Image}" HorizontalOptions="End" HeightRequest="130" Margin="3, 24, 7, 5"/>
+                            <Label Text="{Binding Price}" HorizontalTextAlignment="Start" TextColor="Black" FontAttributes="Bold" FontSize="18" Margin="14, 33, 7, 5"/>
+                            <Label Text="{Binding Probeg}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="14, 65, 7, 5"/>
+                            <Label Text="{Binding Color}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="13" Margin="-75, 65, 7, 5"/>
+                            <Label Text="{Binding Privod}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="13" Margin="-83, 84, 7, 5"/>
+                            <Label Text="{Binding Kuzov}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="13" Margin="-75, 102, 7, 5"/>
+                            <Label Text="{Binding Toplivo}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="14, 83, 7, 5"/>
+                            <Label Text="{Binding KPPType}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="14, 101, 7, 5"/>
+                            <Button Text="Данные" Grid.Column="0" Grid.Row="0" Margin="23, 125, 210, 12" CornerRadius="20" FontSize="10" TextColor="White" BackgroundColor="#cacaca"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
