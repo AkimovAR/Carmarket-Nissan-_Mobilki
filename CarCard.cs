@@ -1,21 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace App1
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CarCard
     {
-        /*Класс с публичными строковыми свойствами*/
+        /// <summary>
+        /// Имя
+        /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// Цена
+        /// </summary>
         public string Price { get; set; }
 
         public string Probeg { get; set; }
 
         public string Toplivo { get; set; }
 
-        public string KPPType { get; set; }
+        public string Transmission { get; set; }
 
         public string Color { get; set; }
 
@@ -24,5 +30,15 @@ namespace App1
         public string Kuzov { get; set; }
 
         public string Image { get; set; }
+
+        public string God { get; set; }
+
+        public string Rul { get; set; }
+
+        public string Users { get; set; }
+
+        public string PTS { get; set; }
+
+        public string Tam { get; set; }
     }
 }

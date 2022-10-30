@@ -1,0 +1,49 @@
+{
+
+  "CarCards": [
+    {
+      "Name": "Nissan Qashqai I, 2007",
+      "Price": "от 549 000 Р",
+      "Probeg": "173 919 км",
+      "Toplivo": "Бензин",
+      "Transmission": "Вариатор",
+      "Color": "Чёрный",
+      "Privod": "Передний",
+      "Kuzov": "5 дв.",
+      "Image": "https://carmetrika.ru/images/items/a68/a192b3a2a/b177b40ceb9c.jpg"
+    },
+    {
+      "Name": "Nissan Juke I, 2012",
+      "Price": "от 890 000 Р",
+      "Probeg": "197 332 км",
+      "Toplivo": "Бензин",
+      "Transmission": "Вариатор",
+      "Color": "Красный",
+      "Privod": "Передний",
+      "Kuzov": "5 дв.",
+      "Image": "https://avatars.mds.yandex.net/get-autoru-vos/2171556/f187db5581637260968758d565b9aa38/1200x900"
+    },
+    {
+      "Name": "Nissan Almera III, 2017",
+      "Price": "от 620 000 Р",
+      "Probeg": "101 948 км",
+      "Toplivo": "Бензин",
+      "Transmission": "Механика",
+      "Color": "Чёрный",
+      "Privod": "Передний",
+      "Kuzov": "Седан",
+      "Image": "https://avatars.mds.yandex.net/get-autoru-vos/1870907/e25825505fd93d8cd4c732fa72b02bcd/1200x900"
+    },
+    {
+      "Name": "Nissan Almera III, 2017",
+      "Price": "от 620 001 Р",
+      "Probeg": "101 948 км",
+      "Toplivo": "Бензин",
+      "Transmission": "Механика",
+      "Color": "Чёрный",
+      "Privod": "Передний",
+      "Kuzov": "Седан",
+      "Image": "https://avatars.mds.yandex.net/get-autoru-vos/2172360/49c64715db9eb7bd206c5c4f18b5641f/1200x900"
+    }
+  ]
+}

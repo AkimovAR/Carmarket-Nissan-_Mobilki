@@ -10,7 +10,11 @@ namespace App1
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            MainPage = new NavigationPage(new App1.MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("b0aeae") /*Цвет панельки сверху*/
+            };
         }
 
         protected override void OnStart()

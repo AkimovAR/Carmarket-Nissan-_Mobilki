@@ -1,0 +1,16 @@
+{
+
+  "CarCards": [
+    {
+      "Name": "Nissan Qashqai I, 2007",
+      "Price": "от 549 000 Р",
+      "Probeg": "173 919 км",
+      "Toplivo": "Бензин",
+      "Transmission": "Вариатор",
+      "Color": "Чёрный",
+      "Privod": "Передний",
+      "Kuzov": "5 дв.",
+      "Image": "https://carmetrika.ru/images/items/a68/a192b3a2a/b177b40ceb9c.jpg"
+    }
+  ]
+}
