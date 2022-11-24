@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Favourites"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView HeightRequest="300">
+            <StackLayout Padding="24" BackgroundColor="#f1f1f1">
+                <Button Text="На главную" Clicked="Button2_Click" CornerRadius="20" Margin="235, -15, 0, -56" FontSize="12" VerticalOptions="Start" TextColor="Black"/>
+                <Label Text="Nissan Motors" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Start" Padding="10" TextColor="Black"/>
+                <Frame BackgroundColor="#cacaca" Padding="24" CornerRadius="10">
+                    <Label HorizontalTextAlignment="Start" TextColor="Black" Margin="-10">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Nissan, " FontSize="24"/>
+                                <Span Text="Все модели / Все поколения" FontSize="14"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Frame>
+                <Grid Padding="0, 3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="115"/>
+                        <ColumnDefinition Width="115"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="36"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Fill="White" HeightRequest="30" WidthRequest="115" Grid.Column="0" Grid.Row="0" RadiusX="10" RadiusY="10"/>
+                    <Rectangle Fill="White" HeightRequest="30" WidthRequest="115" Grid.Column="1" Grid.Row="0" RadiusX="10" RadiusY="10"/>
+                    <Entry x:Name="Price" Placeholder="Цена, Р" FontSize="14" HorizontalTextAlignment="End" Margin="0, -1" Grid.Column="0" Grid.Row="0"/>
+                    <Entry x:Name="KPP" Placeholder="КПП" FontSize="14" HorizontalTextAlignment="End" Margin="0, -1" Grid.Column="1" Grid.Row="0"/>
+                    <Image Source="Filtr.png" Grid.Column="0" Grid.Row="0" HorizontalOptions="Start" HeightRequest="20" WidthRequest="25" Margin="5, 8"/>
+                    <Image Source="Filtr.png" Grid.Column="1" Grid.Row="0" HorizontalOptions="Start" HeightRequest="20" WidthRequest="25" Margin="5, 8"/>
+                </Grid>
+                <ListView x:Name="MyListView1" RowHeight="185" VerticalOptions="Start" BackgroundColor="#f1f1f1" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <!--Шаблон элементов-->
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout HeightRequest="200" VerticalOptions="Start">
+                                    <Frame BackgroundColor="White" CornerRadius="20" Padding="24" HeightRequest="130">
+                                        <!--<Grid RowDefinitions="Auto, *" ColumnDefinitions="345, *">-->
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition>
+                                                </ColumnDefinition>
+                                                <ColumnDefinition>
+                                                </ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Label HorizontalTextAlignment="Start" Grid.Column="0" Grid.Row="0" TextColor="Black" Margin="-14, -13, -7, 5" FontSize="13" Text="{Binding Name}"/>
+                                            <Image Source="{Binding Image}" HorizontalOptions="End" HeightRequest="130" Margin="-3, 15, -165, -115"/>
+                                            <Label Grid.Column="0" Grid.Row="1" Text="{Binding Price}" HorizontalTextAlignment="Start" TextColor="Black" FontAttributes="Bold" FontSize="18" Margin="-14, -17, -7, 5"/>
+                                            <Label Grid.Column="0" Grid.Row="2" Text="{Binding Probeg}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-14, -5, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="2" Text="{Binding Color}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="13" Margin="-225, -5, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="3" Text="{Binding Privod}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="13" Margin="-225, -8, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="4" Text="{Binding Kuzov}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="13" Margin="-225, -6, 7, 5"/>
+                                            <Label Grid.Column="0" Grid.Row="3" Text="{Binding Toplivo}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-14, -8, 7, 5"/>
+                                            <Label Grid.Column="0" Grid.Row="4" Text="{Binding Transmission}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-14, -6, 7, 5"/>
+                                            <Button Text="Данные" Clicked="Button1_Click" HorizontalOptions="Start" Margin="15, 105, -15, -130" CornerRadius="20" FontSize="10" TextColor="White" BackgroundColor="#cacaca"/>
+                                            <!--</Grid>-->
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
+
+<!--<Button Text="Данные" Clicked="Button1_Click" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+            </Button>-->

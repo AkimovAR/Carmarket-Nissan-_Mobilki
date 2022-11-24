@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.CardPage"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout>
+        <Label Text="Название, год"/>
+        <Entry Text="{Binding Name}"/>
+        <Label Text="от Цена Р"/>
+        <Entry Text="{Binding Price}"/>
+        <Label Text="Пробег км"/>
+        <Entry Text="{Binding Probeg}"/>
+        <Label Text="Топливо"/>
+        <Entry Text="{Binding Toplivo}"/>
+        <Label Text="Тип КПП"/>
+        <Entry Text="{Binding Transmission}"/>
+        <Label Text="Цвет"/>
+        <Entry Text="{Binding Color}"/>
+        <Label Text="Привод"/>
+        <Entry Text="{Binding Privod}"/>
+        <Label Text="Тип кузова"/>
+        <Entry Text="{Binding Kuzov}"/>
+        <Label Text="Ссылка на изображение"/>
+        <Entry Text="{Binding Image}"/>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Сохранить" Clicked="SaveAuto"/>
+            <Button Text="Удалить" Clicked="DeleteAuto"/>
+            <Button Text="Отмена" Clicked="Cancel"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

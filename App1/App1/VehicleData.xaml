@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.VehicleData"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView HeightRequest="300">
+            <StackLayout>
+                <Button Text="Избранное" Clicked="Button1_Click" CornerRadius="20" Margin="235, 10, 0, -56" FontSize="12" VerticalOptions="Start" TextColor="Black"/>
+                <Label Text="Nissan Motors" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Start" Padding="10" TextColor="Black"/>
+                <Frame BackgroundColor="#cacaca" Padding="24" CornerRadius="10">
+                    <Label HorizontalTextAlignment="Start" TextColor="Black" Margin="-10">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Nissan, " FontSize="24"/>
+                                <Span Text="Все модели / Все поколения" FontSize="14"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Frame>
+                <ListView x:Name="MyListView2" RowHeight="245" VerticalOptions="Start" BackgroundColor="#f1f1f1" SelectionMode="None" Margin="14, 3, 14, 5">
+                    <ListView.ItemTemplate>
+                        <!--Шаблон элементов-->
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout HeightRequest="300" VerticalOptions="Start">
+                                    <Frame BackgroundColor="White" CornerRadius="20" Padding="24" HeightRequest="200">
+                                        <!--<Grid RowDefinitions="Auto, *" ColumnDefinitions="345, *">-->
+                                        
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition>
+                                                </ColumnDefinition>
+                                                <ColumnDefinition>
+                                                </ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="100">
+                                                </RowDefinition>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                                <RowDefinition>
+                                                </RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Label Text="Характеристики" FontSize="20" TextColor="Black" FontAttributes="Bold" Margin="-17, -15, -7, 5"/>
+                                            <Label HorizontalTextAlignment="Start" Grid.Column="1" Grid.Row="0" TextColor="Black" Margin="-54, 25, -7, 5" FontSize="13" Text="{Binding God}"/>
+                                            <Image Source="{Binding Image}" HorizontalOptions="End" HeightRequest="130" Margin="-3, -5, -175, -115"/>
+                                            <Label Grid.Column="1" Grid.Row="1" Text="{Binding Rul}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-64, -50, -7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="3" Text="{Binding Users}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-94, -30, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="4" Text="{Binding PTS}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="13" Margin="-250, -20, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="5" Text="{Binding Tam}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="13" Margin="-268, -10, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="0" Text="Год выпуска" HorizontalTextAlignment="Center" TextColor="Black" FontSize="13" Margin="-425, 25, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="1" Text="Руль" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-178, -50, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="2" Text="Коробка" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-178, -40, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="3" Text="Владельцы" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-178, -30, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="4" Text="ПТС" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-178, -20, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="5" Text="Таможня" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-178, -10, 7, 5"/>
+                                            <Label Grid.Column="1" Grid.Row="2" Text="{Binding Transmission}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-80, -40, 7, 5"/>                                            <!--</Grid>-->
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Frame BackgroundColor="White" CornerRadius="20" Margin="14, 10, 14, 15" HeightRequest="225">
+                    <Label HorizontalTextAlignment="Start" TextColor="Black" FontAttributes="Bold" Margin="-10" FontSize="20" Text="Проверка по VIN"/>
+                </Frame>
+                <Image Source="galka.png" HorizontalOptions="Start" Margin="30, -213, 85, 125" HeightRequest="25"/>
+                <Label HorizontalTextAlignment="Start" TextColor="Black" Margin="73, -153, 65, 85" FontSize="14" Text="Характеристики совпадают с ПТС"/>
+                <Image Source="galka.png" HorizontalOptions="Start" Margin="30, -73, 85, 125" HeightRequest="25"/>
+                <Label HorizontalTextAlignment="Start" TextColor="Black" Margin="73, -153, 65, 85" FontSize="14" Text="3 владельца в ПТС"/>
+                <Image Source="galka.png" HorizontalOptions="Start" Margin="30, -73, 85, 125" HeightRequest="25"/>
+                <Label HorizontalTextAlignment="Start" TextColor="Black" Margin="73, -153, 65, 85" FontSize="14" Text="Не в залоге"/>
+                <Image Source="galka.png" HorizontalOptions="Start" Margin="30, -73, 85, 125" HeightRequest="25"/>
+                <Label HorizontalTextAlignment="Start" TextColor="Black" Margin="73, -153, 65, 85" FontSize="14" Text="Не числится в угоне"/>
+                <!--<Button Text="Избранное" Clicked="Button1_Click">
+            </Button>-->
+                <Button Text="На главную" Clicked="Button2_Click" CornerRadius="20" FontSize="16" VerticalOptions="Start" TextColor="Black" Margin="73, -3, 65, 85">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
+<!--<Label HorizontalTextAlignment="Start" TextColor="Black" FontAttributes="Bold" Margin="-10" FontSize="20" Text="Характеристики"/>-->
