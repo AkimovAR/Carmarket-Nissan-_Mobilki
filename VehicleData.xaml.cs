@@ -12,29 +12,31 @@ using Xamarin.Forms;
 
 namespace App1
 {
-    public class RootProjects2
-    {
-        public List<CarCard> CarCards { get; set; }
-    }
     public partial class VehicleData : ContentPage
     {
-        //public IList<CarCard> CarCards { get; set; }
-        public List<CarCard> jsonContents2 { get; set; }
         public VehicleData()
         {
             InitializeComponent();
+        }
+        protected override void OnAppearing()
+        {
+            MyListView2.ItemsSource = App.Database.GetItems1();
+            base.OnAppearing();
+        }
 
-            var assembly2 = IntrospectionExtensions.GetTypeInfo(typeof(VehicleData)).Assembly;
-            var stream2 = assembly2.GetManifestResourceStream("App1.VehicleData.json");
-
-            using (StreamReader sr = new StreamReader(stream2)/*var reader = new System.IO.StreamReader(stream)*/)
-            {
-
-                var content2 = sr.ReadToEnd();
-                var data2 = JsonConvert.DeserializeObject<RootProjects2>(content2);
-                jsonContents2 = data2.CarCards;
-            }
-            MyListView2.ItemsSource = jsonContents2;
+        private async void OnItemSelected1(object sender, SelectedItemChangedEventArgs e)
+        {
+            CarData selectedCarCard = (CarData)e.SelectedItem;
+            CardPage1 cardpage = new CardPage1();
+            cardpage.BindingContext = selectedCarCard;
+            await Navigation.PushAsync(cardpage);
+        }
+        private async void CreateAuto1(object sender, EventArgs e)
+        {
+            CarData carcard = new CarData();
+            CardPage1 cardpage = new CardPage1();
+            cardpage.BindingContext = carcard;
+            await Navigation.PushAsync(cardpage);
         }
 
         private async void Button1_Click(object sender, EventArgs e)
@@ -51,25 +53,5 @@ namespace App1
         {
             await Navigation.PopToRootAsync(); /*Возврат на главную страницу*/
         }
-
-        //protected override void OnAppearing() /*Метод заполнения коллекции*/
-        //{
-        //    CarCards = new List<CarCard>(); /*Ссылка на экземпляр коллекции*/
-
-        //    CarCards.Add(new CarCard() /*заполнение методом Add()*/
-        //    {
-        //        Transmission = "Вариатор",
-        //        God = "2007",
-        //        Rul = "Левый",
-        //        Users = "3 или более",
-        //        PTS = "Оригинал",
-        //        Tam = "Растаможен"
-        //    });
-
-        //    BindingContext = this; /*Ссылка на текущий экземпляр класса*/
-
-        //    base.OnAppearing();
-        //}
-
     }
 }

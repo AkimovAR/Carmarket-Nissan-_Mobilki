@@ -18,15 +18,15 @@
                         </Label.FormattedText>
                     </Label>
                 </Frame>
-                <ListView x:Name="MyListView2" RowHeight="245" VerticalOptions="Start" BackgroundColor="#f1f1f1" SelectionMode="None" Margin="14, 3, 14, 5">
+                <ListView x:Name="MyListView2" RowHeight="245" VerticalOptions="Start" BackgroundColor="#f1f1f1" SelectionMode="Single" Margin="14, 3, 14, 5" ItemsSource="{Binding}"  ItemSelected="OnItemSelected1">
                     <ListView.ItemTemplate>
                         <!--Шаблон элементов-->
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout HeightRequest="300" VerticalOptions="Start">
+                                <StackLayout HeightRequest="260" VerticalOptions="Start">
                                     <Frame BackgroundColor="White" CornerRadius="20" Padding="24" HeightRequest="200">
                                         <!--<Grid RowDefinitions="Auto, *" ColumnDefinitions="345, *">-->
-                                        
+
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition>
@@ -61,7 +61,8 @@
                                             <Label Grid.Column="1" Grid.Row="3" Text="Владельцы" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-178, -30, 7, 5"/>
                                             <Label Grid.Column="1" Grid.Row="4" Text="ПТС" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-178, -20, 7, 5"/>
                                             <Label Grid.Column="1" Grid.Row="5" Text="Таможня" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-178, -10, 7, 5"/>
-                                            <Label Grid.Column="1" Grid.Row="2" Text="{Binding Transmission}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-80, -40, 7, 5"/>                                            <!--</Grid>-->
+                                            <Label Grid.Column="1" Grid.Row="2" Text="{Binding Transmission}" HorizontalTextAlignment="Start" TextColor="Black" FontSize="13" Margin="-80, -40, 7, 5"/>
+                                            <!--</Grid>-->
                                         </Grid>
                                     </Frame>
                                 </StackLayout>
@@ -80,8 +81,7 @@
                 <Label HorizontalTextAlignment="Start" TextColor="Black" Margin="73, -153, 65, 85" FontSize="14" Text="Не в залоге"/>
                 <Image Source="galka.png" HorizontalOptions="Start" Margin="30, -73, 85, 125" HeightRequest="25"/>
                 <Label HorizontalTextAlignment="Start" TextColor="Black" Margin="73, -153, 65, 85" FontSize="14" Text="Не числится в угоне"/>
-                <!--<Button Text="Избранное" Clicked="Button1_Click">
-            </Button>-->
+                <Button Text="Добавить" Clicked="CreateAuto1"  CornerRadius="20" FontSize="16" VerticalOptions="Start" TextColor="Black" Margin="73, -3, 65, 85"/>
                 <Button Text="На главную" Clicked="Button2_Click" CornerRadius="20" FontSize="16" VerticalOptions="Start" TextColor="Black" Margin="73, -3, 65, 85">
                 </Button>
             </StackLayout>

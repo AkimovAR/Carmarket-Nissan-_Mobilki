@@ -12,29 +12,24 @@ using Xamarin.Forms;
 
 namespace App1
 {
-    public class RootProjects1
-    {
-        public List<CarCard> CarCards { get; set; }
-    }
     public partial class Favourites : ContentPage
     {
-        //public IList<CarCard> CarCards { get; set; }
-        public List<CarCard> jsonContents1 { get; set; }
         public Favourites()
         {
             InitializeComponent();
+        }
 
-            var assembly1 = IntrospectionExtensions.GetTypeInfo(typeof(Favourites)).Assembly;
-            var stream1 = assembly1.GetManifestResourceStream("App1.Favourite.json");
-
-            using (StreamReader sr = new StreamReader(stream1)/*var reader = new System.IO.StreamReader(stream)*/)
-            {
-
-                var content1 = sr.ReadToEnd();
-                var data1 = JsonConvert.DeserializeObject<RootProjects1>(content1);
-                jsonContents1 = data1.CarCards;
-            }
-            MyListView1.ItemsSource = jsonContents1;
+        protected override void OnAppearing()
+        {
+            MyListView1.ItemsSource = App.Database.GetItems1();
+            base.OnAppearing();
+        }
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            FavouritesCarCard selectedFavouritesCarCard = (FavouritesCarCard)e.SelectedItem;
+            CardPage cardpage = new CardPage();
+            cardpage.BindingContext = selectedFavouritesCarCard;
+            await Navigation.PushAsync(cardpage);
         }
 
         private async void Button1_Click(object sender, EventArgs e)
@@ -51,28 +46,5 @@ namespace App1
         {
             await Navigation.PopToRootAsync(); /*Возврат на главную страницу*/
         }
-
-        //protected override void OnAppearing() /*Метод заполнения коллекции*/
-        //{
-        //    CarCards = new List<CarCard>(); /*Ссылка на экземпляр коллекции*/
-
-        //    CarCards.Add(new CarCard() /*заполнение методом Add()*/
-        //    {
-        //        Name = "Nissan Qashqai I, 2007",
-        //        Price = "от 549 000 Р",
-        //        Probeg = "173 919 км",
-        //        Toplivo = "Бензин",
-        //        Transmission = "Вариатор",
-        //        Color = "Чёрный",
-        //        Privod = "Передний",
-        //        Kuzov = "5 дв.",
-        //        Image = "https://carmetrika.ru/images/items/a68/a192b3a2a/b177b40ceb9c.jpg"
-        //    });
-
-        //    BindingContext = this; /*Ссылка на текущий экземпляр класса*/
-
-        //    base.OnAppearing();
-        //}
-
     }
 }

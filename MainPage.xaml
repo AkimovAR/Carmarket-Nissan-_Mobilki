@@ -34,7 +34,7 @@
                     <Image Source="Filtr.png" Grid.Column="0" Grid.Row="0" HorizontalOptions="Start" HeightRequest="20" WidthRequest="25" Margin="5, 8"/>
                     <Image Source="Filtr.png" Grid.Column="1" Grid.Row="0" HorizontalOptions="Start" HeightRequest="20" WidthRequest="25" Margin="5, 8"/>
                 </Grid>
-                <ListView x:Name="MyListView" RowHeight="185" VerticalOptions="Start" BackgroundColor="#f1f1f1" SelectionMode="None">
+                <ListView x:Name="MyListView" VerticalOptions="Start" BackgroundColor="#f1f1f1" SelectionMode="Single" ItemsSource="{Binding}"  ItemSelected="OnItemSelected" RowHeight="185">
                     <ListView.ItemTemplate>
                         <!--Шаблон элементов-->
                         <DataTemplate>
@@ -81,6 +81,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <Button Text="Добавить авто" Clicked="CreateAuto"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

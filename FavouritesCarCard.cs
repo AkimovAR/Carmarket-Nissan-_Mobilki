@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using SQLite;
 
 namespace App1
 {
-    [Table("CarCards")]
-    public class CarCard
+    [Table ("FavouritesCarCards")]
+    public class FavouritesCarCard
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
@@ -31,15 +33,5 @@ namespace App1
         public string Kuzov { get; set; }
 
         public string Image { get; set; }
-
-        public string God { get; set; }
-
-        public string Rul { get; set; }
-
-        public string Users { get; set; }
-
-        public string PTS { get; set; }
-
-        public string Tam { get; set; }
     }
 }

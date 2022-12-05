@@ -11,24 +11,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Favourite.json" />
-    <None Remove="Main1.json" />
     <None Remove="VehicleData.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Favourite.json" />
-    <EmbeddedResource Include="Main1.json" />
     <EmbeddedResource Include="VehicleData.json" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="CardPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CardPage1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Favourites.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
